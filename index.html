@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Aarav Banerjee — MBA Candidate, Marketing & Finance | Lovely Professional University">
+<title>Aarav Banerjee — MBA Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0d1117;
+  --ink2: #1a2332;
+  --ink3: #243044;
+  --paper: #f7f5f0;
+  --paper2: #ede9e1;
+  --paper3: #e2ddd5;
+  --gold: #b8882a;
+  --gold2: #d4a843;
+  --navy: #1a2f5e;
+  --navy2: #243a72;
+  --slate: #4a5568;
+  --muted: #8a94a6;
+  --rule: rgba(180,165,140,0.4);
+  --white: #fff;
+  --success: #1a6b3c;
+  --danger: #8b1a1a;
+  --text: #0d1117;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--paper);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ─── CURSOR ─── */
+#cur { width:10px;height:10px;background:var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transition:transform .12s;}
+#cur2 { width:32px;height:32px;border:1.5px solid var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transition:all .18s ease;opacity:.5;}
+body:not(:hover) #cur,body:not(:hover) #cur2{opacity:0}
+
+/* ─── LOADER ─── */
+#loader {
+  position:fixed;inset:0;background:var(--ink);z-index:10000;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transition:opacity .7s;
+}
+.ld-wordmark { font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--paper);letter-spacing:.15em; }
+.ld-sub { font-family:'DM Mono',monospace;font-size:.65rem;color:var(--gold);letter-spacing:.35em;text-transform:uppercase;margin-top:.4rem; }
+.ld-bar { width:180px;height:1px;background:rgba(255,255,255,.1);margin-top:2.5rem;overflow:hidden; }
+.ld-fill { height:100%;width:0;background:var(--gold);animation:ldfill 2.2s ease forwards; }
+@keyframes ldfill{to{width:100%}}
+
+/* ─── NAV ─── */
+nav {
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  height:64px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 3rem;
+  background:rgba(247,245,240,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--rule);
+}
+.nav-brand { display:flex;align-items:center;gap:.75rem; }
+.nav-monogram {
+  width:36px;height:36px;border-radius:50%;
+  background:var(--ink);color:var(--paper);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;
+  letter-spacing:.05em;
+}
+.nav-name { font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;letter-spacing:.05em; }
+.nav-title-small { font-size:.65rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase; }
+.nav-links { display:flex;gap:2.5rem;list-style:none; }
+.nav-links a {
+  font-size:.75rem;color:var(--slate);text-decoration:none;
+  letter-spacing:.12em;text-transform:uppercase;font-weight:500;
+  transition:color .2s;position:relative;
+}
+.nav-links a::after { content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s; }
+.nav-links a:hover { color:var(--ink); }
+.nav-links a:hover::after { width:100%; }
+.nav-cta {
+  font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;font-weight:600;
+  padding:.55rem 1.4rem;border:1.5px solid var(--ink);
+  color:var(--ink);background:transparent;cursor:pointer;
+  text-decoration:none;transition:all .2s;font-family:'DM Sans',sans-serif;
+}
+.nav-cta:hover { background:var(--ink);color:var(--paper); }
+.ham { display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none; }
+.ham span { width:22px;height:1.5px;background:var(--ink);transition:all .3s; }
+
+/* ─── HERO ─── */
+#hero {
+  min-height:100vh;padding-top:64px;
+  display:grid;grid-template-columns:1fr 1fr;
+  position:relative;overflow:hidden;
+}
+.hero-left {
+  display:flex;flex-direction:column;justify-content:center;
+  padding:5rem 3rem 5rem 4rem;
+  position:relative;z-index:2;
+}
+.hero-eyebrow {
+  display:flex;align-items:center;gap:.75rem;margin-bottom:2rem;
+}
+.hero-eyebrow .line { width:32px;height:1px;background:var(--gold); }
+.hero-eyebrow span {
+  font-family:'DM Mono',monospace;font-size:.65rem;
+  letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-weight:500;
+}
+.hero-name {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,5vw,5rem);
+  font-weight:800;line-height:1.05;
+  color:var(--ink);margin-bottom:1.5rem;
+  letter-spacing:-.02em;
+}
+.hero-name em { font-style:italic;color:var(--gold); }
+.hero-desc {
+  font-size:1rem;line-height:1.8;color:var(--slate);
+  max-width:420px;margin-bottom:2.5rem;font-weight:300;
+}
+.hero-pills { display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:3rem; }
+.pill {
+  padding:.35rem .9rem;border:1px solid var(--rule);
+  font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--slate);font-weight:500;background:var(--white);
+}
+.hero-actions { display:flex;gap:1rem;align-items:center; }
+.btn-dark {
+  padding:.75rem 2rem;background:var(--ink);color:var(--paper);
+  font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;
+  font-weight:600;text-decoration:none;transition:all .25s;
+  font-family:'DM Sans',sans-serif;
+  display:inline-block;
+}
+.btn-dark:hover { background:var(--navy);transform:translateY(-2px); }
+.btn-outline {
+  padding:.75rem 2rem;border:1.5px solid var(--ink);color:var(--ink);
+  font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;
+  font-weight:600;text-decoration:none;transition:all .25s;
+  font-family:'DM Sans',sans-serif;display:inline-block;
+}
+.btn-outline:hover { background:var(--ink);color:var(--paper); }
+.hero-right {
+  background:var(--ink2);position:relative;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:center;padding:3rem;
+}
+.hero-right::before {
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,.03) 39px,rgba(255,255,255,.03) 40px),
+             repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(255,255,255,.03) 39px,rgba(255,255,255,.03) 40px);
+}
+.hero-card-stack { position:relative;z-index:2; }
+.kpi-grid { display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06); }
+.kpi {
+  padding:2rem 1.5rem;background:var(--ink2);
+  border-bottom:1px solid rgba(255,255,255,.04);
+}
+.kpi-num {
+  font-family:'Playfair Display',serif;
+  font-size:2.8rem;font-weight:700;color:var(--paper);
+  line-height:1;margin-bottom:.4rem;
+}
+.kpi-num small { font-size:1.2rem;color:var(--gold);font-weight:400; }
+.kpi-label { font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:500; }
+.kpi-delta { font-size:.7rem;color:#4ade80;margin-top:.3rem;font-family:'DM Mono',monospace; }
+.hero-chart-label {
+  margin-top:1.5rem;padding:1.2rem 1.5rem;
+  border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02);
+  position:relative;z-index:2;
+}
+.hcl-top { display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem; }
+.hcl-title { font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted); }
+.hcl-val { font-family:'DM Mono',monospace;font-size:.8rem;color:var(--gold); }
+.sparkline { display:flex;align-items:flex-end;gap:3px;height:40px; }
+.spark-bar { flex:1;background:rgba(184,136,42,.25);transition:background .3s; }
+.spark-bar.hi { background:var(--gold); }
+.spark-bar:hover { background:var(--gold2); }
+
+/* ─── SECTION STRUCTURE ─── */
+.section { padding:6rem 4rem; }
+.section.alt { background:var(--ink);color:var(--paper); }
+.section.mid { background:var(--paper2); }
+.container { max-width:1120px;margin:0 auto; }
+.sec-header { display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:4rem; }
+.sec-overline {
+  font-family:'DM Mono',monospace;font-size:.65rem;
+  letter-spacing:.3em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:.75rem;
+}
+.sec-title {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;
+  line-height:1.1;letter-spacing:-.02em;
+}
+.sec-title em { font-style:italic;color:var(--gold); }
+.alt .sec-title { color:var(--paper); }
+.sec-rule { width:100%;height:1px;background:var(--rule);margin:1rem 0 0; }
+.alt .sec-rule { background:rgba(255,255,255,.1); }
+.sec-num { font-family:'Playfair Display',serif;font-size:5rem;font-weight:800;color:rgba(0,0,0,.04);line-height:1;text-align:right; }
+.alt .sec-num { color:rgba(255,255,255,.04); }
+
+/* ─── ABOUT ─── */
+.about-grid { display:grid;grid-template-columns:1fr 2.2fr;gap:5rem;align-items:start; }
+.about-photo-col { position:relative; }
+.about-photo {
+  width:100%;aspect-ratio:3/4;background:var(--ink2);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.about-photo-inner {
+  font-family:'Playfair Display',serif;font-size:6rem;font-weight:800;
+  color:rgba(255,255,255,.08);letter-spacing:-.05em;
+  position:absolute;bottom:-10px;right:-10px;line-height:1;
+}
+.about-photo-main {
+  font-family:'Playfair Display',serif;font-size:7rem;font-weight:800;
+  color:rgba(255,255,255,.15);
+}
+.about-photo-accent {
+  position:absolute;bottom:0;left:0;right:0;
+  background:var(--gold);height:4px;
+}
+.about-photo-tag {
+  position:absolute;bottom:1.5rem;left:1.5rem;
+  background:var(--gold);color:var(--ink);
+  font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+  font-weight:700;padding:.3rem .8rem;
+}
+.about-text-col {}
+.about-lead {
+  font-family:'Playfair Display',serif;font-size:1.35rem;
+  line-height:1.65;color:var(--ink);margin-bottom:2rem;
+  font-weight:500;
+}
+.about-body { font-size:.95rem;line-height:1.9;color:var(--slate);margin-bottom:2rem; }
+.about-values { display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem; }
+.value-item {
+  padding:1.2rem 1.5rem;border-left:2px solid var(--gold);
+  background:var(--paper2);
+}
+.value-item h4 { font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;margin-bottom:.3rem;color:var(--ink); }
+.value-item p { font-size:.82rem;color:var(--slate);line-height:1.6; }
+
+/* ─── EDUCATION ─── */
+.edu-layout { display:grid;grid-template-columns:1fr 1fr;gap:3rem; }
+.edu-card {
+  border:1px solid rgba(255,255,255,.08);padding:2.5rem;
+  position:relative;overflow:hidden;transition:border-color .3s;
+}
+.edu-card:hover { border-color:var(--gold); }
+.edu-card::before {
+  content:'';position:absolute;top:0;left:0;width:3px;height:0;
+  background:var(--gold);transition:height .4s;
+}
+.edu-card:hover::before { height:100%; }
+.edu-deg {
+  font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;
+  color:var(--paper);margin-bottom:.5rem;
+}
+.edu-inst { font-size:.8rem;color:var(--gold);letter-spacing:.1em;margin-bottom:.5rem;text-transform:uppercase; }
+.edu-year { font-family:'DM Mono',monospace;font-size:.7rem;color:var(--muted);margin-bottom:1.5rem; }
+.edu-body { font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.8;margin-bottom:1.5rem; }
+.module-list { list-style:none;display:flex;flex-direction:column;gap:.5rem; }
+.module-list li {
+  font-size:.78rem;color:rgba(255,255,255,.4);
+  padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.04);
+  display:flex;gap:.7rem;align-items:center;
+}
+.module-list li::before { content:'—';color:var(--gold);flex-shrink:0; }
+.edu-badge {
+  display:inline-block;margin-top:1.5rem;
+  font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+  padding:.3rem .9rem;border:1px solid rgba(184,136,42,.4);color:var(--gold);font-weight:600;
+}
+
+/* ─── SKILLS ─── */
+.skills-top { display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-bottom:2rem; }
+.skill-block { padding:1.5rem;border:1px solid var(--rule);background:var(--white); }
+.skill-block-head {
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:1.2rem;padding-bottom:.75rem;border-bottom:1px solid var(--rule);
+}
+.skill-block-head h3 { font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--ink); }
+.skill-block-head span { font-family:'DM Mono',monospace;font-size:.65rem;color:var(--gold); }
+.skill-row { margin-bottom:1rem; }
+.skill-row .name { font-size:.8rem;color:var(--slate);margin-bottom:.4rem;display:flex;justify-content:space-between; }
+.skill-row .name span { font-family:'DM Mono',monospace;color:var(--muted);font-size:.72rem; }
+.bar-track { height:2px;background:var(--paper3);overflow:hidden; }
+.bar-fill { height:100%;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform 1.2s cubic-bezier(.4,0,.2,1); }
+.bar-fill.gold { background:var(--gold); }
+.bar-fill.navy { background:var(--navy); }
+.bar-fill.slate { background:var(--slate); }
+.tools-showcase {
+  padding:2rem;border:1px solid var(--rule);background:var(--white);
+  display:grid;grid-template-columns:repeat(6,1fr);gap:1rem;align-items:center;
+}
+.tool-item {
+  text-align:center;padding:1rem .5rem;border:1px solid var(--rule);
+  transition:all .25s;cursor:default;
+}
+.tool-item:hover { border-color:var(--gold);background:var(--paper2); }
+.tool-icon { font-size:1.4rem;display:block;margin-bottom:.5rem; }
+.tool-name { font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);font-weight:600; }
+
+/* ─── PROJECTS ─── */
+.projects-grid { display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,.05); }
+.proj {
+  background:var(--ink2);padding:2.5rem;
+  transition:background .3s;cursor:pointer;position:relative;overflow:hidden;
+}
+.proj:hover { background:var(--ink3); }
+.proj-num {
+  font-family:'Playfair Display',serif;font-size:.85rem;color:rgba(255,255,255,.2);
+  letter-spacing:.1em;margin-bottom:1.5rem;font-style:italic;
+}
+.proj-tag {
+  display:inline-block;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+  padding:.25rem .75rem;background:rgba(184,136,42,.15);
+  border:1px solid rgba(184,136,42,.3);color:var(--gold);font-weight:600;margin-bottom:1.2rem;
+}
+.proj-tag.teal { background:rgba(20,184,166,.1);border-color:rgba(20,184,166,.3);color:#2dd4bf; }
+.proj-tag.red { background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.3);color:#f87171; }
+.proj-tag.blue { background:rgba(59,130,246,.1);border-color:rgba(59,130,246,.3);color:#93c5fd; }
+.proj h3 {
+  font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;
+  color:var(--paper);margin-bottom:.75rem;line-height:1.3;
+}
+.proj p { font-size:.85rem;color:rgba(255,255,255,.45);line-height:1.8;margin-bottom:1.5rem; }
+.proj-impact {
+  display:flex;align-items:center;gap:.6rem;
+  font-family:'DM Mono',monospace;font-size:.75rem;
+  color:#4ade80;margin-bottom:1.5rem;
+}
+.proj-impact::before { content:'▲';font-size:.6rem; }
+.proj-footer {
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.05);
+}
+.proj-tools { display:flex;gap:.5rem;flex-wrap:wrap; }
+.tool-chip {
+  font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+  padding:.2rem .6rem;border:1px solid rgba(255,255,255,.08);
+  color:rgba(255,255,255,.3);font-weight:500;
+}
+.proj-arrow { color:rgba(255,255,255,.2);font-size:.9rem;transition:all .3s; }
+.proj:hover .proj-arrow { color:var(--gold);transform:translateX(4px); }
+
+/* ─── CERTIFICATIONS ─── */
+.certs-list { display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem; }
+.cert {
+  padding:1.8rem 2rem;border:1px solid var(--rule);background:var(--white);
+  position:relative;transition:all .3s;
+}
+.cert:hover { border-color:var(--gold);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.08); }
+.cert-issuer {
+  font-family:'DM Mono',monospace;font-size:.6rem;color:var(--gold);
+  letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem;
+}
+.cert-issuer::before { content:'';width:20px;height:1px;background:var(--gold); }
+.cert h4 { font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.4rem;line-height:1.4; }
+.cert p { font-size:.78rem;color:var(--muted);margin-bottom:1rem; }
+.cert-verified {
+  font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--success);font-weight:700;display:flex;align-items:center;gap:.4rem;
+}
+.cert-verified::before { content:'✓';font-size:.7rem; }
+
+/* ─── INTERESTS ─── */
+.interests-row { display:grid;grid-template-columns:repeat(6,1fr);gap:1.5rem; }
+.int-card {
+  padding:2rem 1rem;text-align:center;border:1px solid rgba(255,255,255,.06);
+  transition:all .3s;cursor:default;
+}
+.int-card:hover { border-color:var(--gold);background:rgba(184,136,42,.04); }
+.int-icon { font-size:1.6rem;display:block;margin-bottom:1rem;filter:grayscale(1) brightness(0) invert(1);opacity:.4; }
+.int-card:hover .int-icon { filter:none;opacity:1; }
+.int-card p { font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);font-weight:600; }
+.int-card:hover p { color:var(--gold); }
+
+/* ─── ACHIEVEMENTS ─── */
+.ach-metrics { display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-bottom:3rem; }
+.ach-metric {
+  padding:2rem;background:var(--ink2);border:1px solid rgba(255,255,255,.04);
+  position:relative;overflow:hidden;
+}
+.ach-metric::after {
+  content:'';position:absolute;bottom:0;left:0;width:0;height:2px;
+  background:var(--gold);transition:width .5s;
+}
+.ach-metric:hover::after { width:100%; }
+.ach-metric .num {
+  font-family:'Playfair Display',serif;font-size:3rem;font-weight:800;
+  color:var(--paper);line-height:1;margin-bottom:.5rem;
+}
+.ach-metric .lbl { font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted); }
+.ach-awards { display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.04); }
+.award {
+  padding:2rem;background:var(--ink2);display:flex;gap:1.5rem;
+  align-items:flex-start;transition:background .3s;
+}
+.award:hover { background:var(--ink3); }
+.award-rank {
+  font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;
+  color:rgba(184,136,42,.2);line-height:1;flex-shrink:0;width:40px;
+}
+.award h4 { font-size:.9rem;font-weight:600;color:var(--paper);margin-bottom:.3rem; }
+.award p { font-size:.78rem;color:rgba(255,255,255,.35);line-height:1.7; }
+
+/* ─── CONTACT ─── */
+.contact-grid { display:grid;grid-template-columns:2fr 3fr;gap:5rem;align-items:start; }
+.contact-left {}
+.contact-headline {
+  font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;
+  color:var(--ink);line-height:1.2;margin-bottom:1.5rem;
+}
+.contact-headline em { font-style:italic;color:var(--gold); }
+.contact-body { font-size:.9rem;color:var(--slate);line-height:1.9;margin-bottom:2.5rem; }
+.contact-items { display:flex;flex-direction:column;gap:.75rem; }
+.contact-item {
+  display:flex;gap:1rem;align-items:center;
+  padding:1rem 1.2rem;border:1px solid var(--rule);background:var(--white);
+  text-decoration:none;color:var(--ink);transition:all .25s;
+}
+.contact-item:hover { border-color:var(--gold);padding-left:1.8rem; }
+.contact-item .ci-label { font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem; }
+.contact-item .ci-val { font-size:.88rem;font-weight:600; }
+.contact-item .ci-arrow { margin-left:auto;color:var(--muted);font-size:.9rem;transition:transform .25s; }
+.contact-item:hover .ci-arrow { transform:translateX(4px);color:var(--gold); }
+.form-wrap { padding:2.5rem;border:1px solid var(--rule);background:var(--white); }
+.form-row { display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem; }
+.fg { display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem; }
+.fg label { font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);font-weight:600; }
+.fg input, .fg textarea, .fg select {
+  padding:.75rem 1rem;border:1px solid var(--rule);
+  font-family:'DM Sans',sans-serif;font-size:.88rem;
+  color:var(--ink);background:var(--paper);outline:none;
+  transition:border-color .2s;resize:none;
+}
+.fg input:focus, .fg textarea:focus { border-color:var(--gold); }
+.form-submit {
+  width:100%;padding:.9rem;background:var(--ink);color:var(--paper);
+  font-family:'DM Sans',sans-serif;font-size:.75rem;letter-spacing:.2em;
+  text-transform:uppercase;font-weight:700;border:none;cursor:pointer;
+  transition:all .25s;
+}
+.form-submit:hover { background:var(--navy); }
+
+/* ─── FOOTER ─── */
+footer {
+  background:var(--ink);padding:3rem 4rem;
+  display:flex;justify-content:space-between;align-items:center;
+  border-top:1px solid rgba(255,255,255,.04);
+}
+.footer-brand { font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--paper);font-weight:600; }
+.footer-sub { font-size:.65rem;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;margin-top:.3rem; }
+.footer-copy { font-size:.7rem;color:var(--muted);text-align:right; }
+.social-links { display:flex;gap:1rem; }
+.social-link {
+  width:36px;height:36px;border:1px solid rgba(255,255,255,.1);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.4);text-decoration:none;font-size:.8rem;
+  transition:all .25s;font-family:'DM Mono',monospace;font-weight:700;
+}
+.social-link:hover { border-color:var(--gold);color:var(--gold); }
+
+/* ─── REVEAL ─── */
+.rv { opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease; }
+.rv.show { opacity:1;transform:none; }
+.rv-l { opacity:0;transform:translateX(-28px);transition:opacity .7s ease,transform .7s ease; }
+.rv-l.show { opacity:1;transform:none; }
+.rv-r { opacity:0;transform:translateX(28px);transition:opacity .7s ease,transform .7s ease; }
+.rv-r.show { opacity:1;transform:none; }
+
+/* ─── MOBILE ─── */
+@media(max-width:900px){
+  #hero{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .hero-left{padding:5rem 2rem 4rem}
+  nav{padding:0 1.5rem}
+  .nav-links,.nav-cta{display:none}
+  .ham{display:flex}
+  .mob-nav{position:fixed;inset:0;background:var(--ink);z-index:999;display:none;flex-direction:column;align-items:center;justify-content:center;gap:2rem;}
+  .mob-nav.open{display:flex}
+  .mob-nav a{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--paper);text-decoration:none;font-weight:700;}
+  .section{padding:4rem 1.5rem}
+  .about-grid,.edu-layout,.projects-grid,.skills-top,.ach-metrics,.ach-awards,.contact-grid,.certs-list,.interests-row{grid-template-columns:1fr}
+  .tools-showcase{grid-template-columns:repeat(3,1fr)}
+  footer{flex-direction:column;gap:1.5rem;text-align:center}
+  .footer-copy{text-align:center}
+  .form-row{grid-template-columns:1fr}
+  .sec-header{flex-direction:column;align-items:flex-start;gap:.5rem}
+  .sec-num{display:none}
+  body{cursor:auto}#cur,#cur2{display:none}
+}
+</style>
+</head>
+<body>
+
+<div id="cur"></div><div id="cur2"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="ld-wordmark">AB</div>
+  <div class="ld-sub">MBA Portfolio · 2025</div>
+  <div class="ld-bar"><div class="ld-fill"></div></div>
+</div>
+
+<!-- MOB NAV -->
+<div class="mob-nav" id="mobnav">
+  <a href="#about" onclick="closeMob()">About</a>
+  <a href="#education" onclick="closeMob()">Education</a>
+  <a href="#skills" onclick="closeMob()">Skills</a>
+  <a href="#projects" onclick="closeMob()">Projects</a>
+  <a href="#certifications" onclick="closeMob()">Certifications</a>
+  <a href="#achievements" onclick="closeMob()">Achievements</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-monogram">AB</div>
+    <div>
+      <div class="nav-name">Aarav Banerjee</div>
+      <div class="nav-title-small">MBA Candidate · LPU</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#achievements">Awards</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Hire Me</a>
+  <button class="ham" id="hamBtn" onclick="document.getElementById('mobnav').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <div class="line"></div>
+      <span>MBA · Marketing &amp; Finance</span>
+    </div>
+    <h1 class="hero-name">Aarav<br><em>Banerjee</em></h1>
+    <p class="hero-desc">Turning data into competitive strategy. An analytical thinker with a commercial mindset — bridging financial insight and market intelligence to drive business growth.</p>
+    <div class="hero-pills">
+      <span class="pill">Strategic Marketing</span>
+      <span class="pill">Financial Analysis</span>
+      <span class="pill">Business Development</span>
+      <span class="pill">LPU · Punjab</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#" class="btn-dark">Download CV</a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card-stack">
+      <div class="kpi-grid">
+        <div class="kpi">
+          <div class="kpi-num">4<small>+</small></div>
+          <div class="kpi-label">Live Projects</div>
+          <div class="kpi-delta">▲ 2 this semester</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-num">₹3<small>L</small></div>
+          <div class="kpi-label">Budget Managed</div>
+          <div class="kpi-delta">▲ Student Council</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-num">6</div>
+          <div class="kpi-label">Certifications</div>
+          <div class="kpi-delta">▲ Industry Verified</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-num">Top<small>5%</small></div>
+          <div class="kpi-label">MBA Cohort Rank</div>
+          <div class="kpi-delta">▲ Dean's List</div>
+        </div>
+      </div>
+      <div class="hero-chart-label">
+        <div class="hcl-top">
+          <span class="hcl-title">Academic Performance Index</span>
+          <span class="hcl-val">8.7 / 10.0 CGPA</span>
+        </div>
+        <div class="sparkline" id="sparkline"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="sec-header rv">
+      <div>
+        <div class="sec-overline">01 — Profile</div>
+        <h2 class="sec-title">The <em>Business</em><br>Case for Aarav</h2>
+        <div class="sec-rule"></div>
+      </div>
+      <div class="sec-num">01</div>
+    </div>
+    <div class="about-grid">
+      <div class="about-photo-col rv-l">
+        <div class="about-photo">
+          <div class="about-photo-main">AB</div>
+          <div class="about-photo-inner">2025</div>
+          <div class="about-photo-accent"></div>
+          <div class="about-photo-tag">MBA '25</div>
+        </div>
+      </div>
+      <div class="rv-r">
+        <p class="about-lead">"I believe the most powerful business decisions are made at the intersection of data fluency and human understanding."</p>
+        <p class="about-body">I'm Aarav Banerjee — an MBA candidate at Lovely Professional University specialising in Marketing and Finance. My journey into business management began with a Commerce Honours degree from the University of Delhi, where I developed a deep appreciation for how numbers tell stories.</p>
+        <p class="about-body">At LPU, I've translated academic rigour into real-world impact — from conducting primary consumer research with 300+ respondents to presenting equity valuation models for listed companies. I approach every business problem with structured thinking, commercial awareness, and a bias for execution.</p>
+        <p class="about-body">I'm actively seeking roles in Strategy, Marketing Analytics, Investment Banking, or Corporate Finance — where I can contribute measurable business value from day one.</p>
+        <div class="about-values">
+          <div class="value-item">
+            <h4>Analytical Mindset</h4>
+            <p>Data-driven decision making across financial modelling and consumer research.</p>
+          </div>
+          <div class="value-item">
+            <h4>Strategic Vision</h4>
+            <p>Translating market signals into actionable go-to-market strategies.</p>
+          </div>
+          <div class="value-item">
+            <h4>Leadership</h4>
+            <p>Finance Head of MBA Council — managing events and ₹3L+ budgets.</p>
+          </div>
+          <div class="value-item">
+            <h4>Commercial Acumen</h4>
+            <p>Bridging theory and practice through live business projects and simulations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section alt" id="education">
+  <div class="container">
+    <div class="sec-header rv">
+      <div>
+        <div class="sec-overline" style="color:var(--gold)">02 — Academic Background</div>
+        <h2 class="sec-title">Educational <em>Foundation</em></h2>
+        <div class="sec-rule" style="background:rgba(255,255,255,.08)"></div>
+      </div>
+      <div class="sec-num">02</div>
+    </div>
+    <div class="edu-layout">
+      <div class="edu-card rv-l">
+        <div class="edu-deg">Master of Business Administration</div>
+        <div class="edu-inst">Lovely Professional University</div>
+        <div class="edu-year">2023 – 2025 · Punjab, India · CGPA 8.7 / 10</div>
+        <p class="edu-body">Dual specialisation in Marketing &amp; Finance with exposure to live industry projects, business simulations, and guest lectures from Fortune 500 executives. Active participant in case competitions and the MBA Student Council.</p>
+        <ul class="module-list">
+          <li>Strategic Management &amp; Competitive Analysis</li>
+          <li>Financial Modelling &amp; Valuation</li>
+          <li>Consumer Behaviour &amp; Brand Management</li>
+          <li>Corporate Finance &amp; Investment Analysis</li>
+          <li>Digital Marketing &amp; Analytics</li>
+          <li>Business Research Methods</li>
+        </ul>
+        <div class="edu-badge">Dean's List · Top 5% Cohort</div>
+      </div>
+      <div class="edu-card rv-r">
+        <div class="edu-deg">Bachelor of Commerce (Hons.)</div>
+        <div class="edu-inst">University of Delhi</div>
+        <div class="edu-year">2020 – 2023 · Delhi, India · First Class Honours</div>
+        <p class="edu-body">Built a rigorous foundation in accounting, economics, and quantitative methods. Participated in inter-college business competitions and led the college entrepreneurship cell, organising workshops attended by 500+ students.</p>
+        <ul class="module-list">
+          <li>Financial Accounting &amp; Auditing</li>
+          <li>Macroeconomics &amp; Business Environment</li>
+          <li>Cost &amp; Management Accounting</li>
+          <li>Business Statistics &amp; Quantitative Methods</li>
+          <li>Business Law &amp; Taxation</li>
+          <li>Entrepreneurship &amp; Innovation</li>
+        </ul>
+        <div class="edu-badge">First Class Honours</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section mid" id="skills">
+  <div class="container">
+    <div class="sec-header rv">
+      <div>
+        <div class="sec-overline">03 — Competencies</div>
+        <h2 class="sec-title">Skills &amp; <em>Expertise</em></h2>
+        <div class="sec-rule"></div>
+      </div>
+      <div class="sec-num">03</div>
+    </div>
+    <div class="skills-top rv">
+      <div class="skill-block">
+        <div class="skill-block-head"><h3>Marketing</h3><span>ADV</span></div>
+        <div class="skill-row"><div class="name">Digital Marketing<span>90%</span></div><div class="bar-track"><div class="bar-fill gold" data-w=".9"></div></div></div>
+        <div class="skill-row"><div class="name">Brand Strategy<span>85%</span></div><div class="bar-track"><div class="bar-fill gold" data-w=".85"></div></div></div>
+        <div class="skill-row"><div class="name">Market Research<span>82%</span></div><div class="bar-track"><div class="bar-fill gold" data-w=".82"></div></div></div>
+        <div class="skill-row"><div class="name">SEO / SEM<span>75%</span></div><div class="bar-track"><div class="bar-fill gold" data-w=".75"></div></div></div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-head"><h3>Finance</h3><span>INT</span></div>
+        <div class="skill-row"><div class="name">Financial Modelling<span>88%</span></div><div class="bar-track"><div class="bar-fill navy" data-w=".88"></div></div></div>
+        <div class="skill-row"><div class="name">Equity Valuation<span>82%</span></div><div class="bar-track"><div class="bar-fill navy" data-w=".82"></div></div></div>
+        <div class="skill-row"><div class="name">Ratio Analysis<span>85%</span></div><div class="bar-track"><div class="bar-fill navy" data-w=".85"></div></div></div>
+        <div class="skill-row"><div class="name">Corporate Finance<span>79%</span></div><div class="bar-track"><div class="bar-fill navy" data-w=".79"></div></div></div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-head"><h3>Analytics</h3><span>PRO</span></div>
+        <div class="skill-row"><div class="name">MS Excel<span>92%</span></div><div class="bar-track"><div class="bar-fill" data-w=".92"></div></div></div>
+        <div class="skill-row"><div class="name">Power BI<span>80%</span></div><div class="bar-track"><div class="bar-fill" data-w=".8"></div></div></div>
+        <div class="skill-row"><div class="name">Google Analytics<span>85%</span></div><div class="bar-track"><div class="bar-fill" data-w=".85"></div></div></div>
+        <div class="skill-row"><div class="name">Data Storytelling<span>88%</span></div><div class="bar-track"><div class="bar-fill" data-w=".88"></div></div></div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-head"><h3>Leadership</h3><span>STR</span></div>
+        <div class="skill-row"><div class="name">Strategic Thinking<span>90%</span></div><div class="bar-track"><div class="bar-fill slate" data-w=".9"></div></div></div>
+        <div class="skill-row"><div class="name">Communication<span>88%</span></div><div class="bar-track"><div class="bar-fill slate" data-w=".88"></div></div></div>
+        <div class="skill-row"><div class="name">Team Leadership<span>87%</span></div><div class="bar-track"><div class="bar-fill slate" data-w=".87"></div></div></div>
+        <div class="skill-row"><div class="name">Negotiation<span>80%</span></div><div class="bar-track"><div class="bar-fill slate" data-w=".8"></div></div></div>
+      </div>
+    </div>
+    <div class="tools-showcase rv">
+      <div class="tool-item"><span class="tool-icon">📊</span><div class="tool-name">Excel</div></div>
+      <div class="tool-item"><span class="tool-icon">📈</span><div class="tool-name">Power BI</div></div>
+      <div class="tool-item"><span class="tool-icon">🔍</span><div class="tool-name">Analytics</div></div>
+      <div class="tool-item"><span class="tool-icon">📉</span><div class="tool-name">Bloomberg</div></div>
+      <div class="tool-item"><span class="tool-icon">🎨</span><div class="tool-name">Canva</div></div>
+      <div class="tool-item"><span class="tool-icon">📋</span><div class="tool-name">Salesforce</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section alt" id="projects">
+  <div class="container">
+    <div class="sec-header rv">
+      <div>
+        <div class="sec-overline" style="color:var(--gold)">04 — Case Studies</div>
+        <h2 class="sec-title">Business <em>Projects</em></h2>
+        <div class="sec-rule" style="background:rgba(255,255,255,.08)"></div>
+      </div>
+      <div class="sec-num">04</div>
+    </div>
+    <div class="projects-grid rv">
+      <div class="proj">
+        <div class="proj-num">01 / 04</div>
+        <div class="proj-tag">Marketing Strategy</div>
+        <h3>D2C Brand Launch — Skincare Vertical</h3>
+        <p>Developed a comprehensive go-to-market strategy for a direct-to-consumer skincare brand. Included consumer segmentation, competitive positioning, pricing architecture, and a multi-channel digital acquisition funnel.</p>
+        <div class="proj-impact">Projected 40% reduction in customer acquisition cost</div>
+        <div class="proj-footer">
+          <div class="proj-tools"><span class="tool-chip">Google Analytics</span><span class="tool-chip">Excel</span><span class="tool-chip">Canva</span></div>
+          <span class="proj-arrow">→</span>
+        </div>
+      </div>
+      <div class="proj">
+        <div class="proj-num">02 / 04</div>
+        <div class="proj-tag teal">Financial Analysis</div>
+        <h3>Equity Valuation Report — Reliance Industries</h3>
+        <p>Conducted full-cycle fundamental analysis using DCF, P/E, and EV/EBITDA methodologies. Produced an institutional-style investment recommendation memo with 5-year financial projections and scenario analysis.</p>
+        <div class="proj-impact">Identified 18% upside potential vs. prevailing market price</div>
+        <div class="proj-footer">
+          <div class="proj-tools"><span class="tool-chip">Excel</span><span class="tool-chip">Power BI</span><span class="tool-chip">Bloomberg</span></div>
+          <span class="proj-arrow">→</span>
+        </div>
+      </div>
+      <div class="proj">
+        <div class="proj-num">03 / 04</div>
+        <div class="proj-tag blue">Consumer Research</div>
+        <h3>Gen Z Purchasing Behaviour — Social Commerce</h3>
+        <p>Led primary research surveying 300+ Gen Z respondents on social commerce adoption patterns. Applied SPSS for regression analysis and delivered brand positioning insights adopted by two student ventures.</p>
+        <div class="proj-impact">Research cited by 2 campus startups for product positioning</div>
+        <div class="proj-footer">
+          <div class="proj-tools"><span class="tool-chip">SPSS</span><span class="tool-chip">Tableau</span><span class="tool-chip">Google Forms</span></div>
+          <span class="proj-arrow">→</span>
+        </div>
+      </div>
+      <div class="proj">
+        <div class="proj-num">04 / 04</div>
+        <div class="proj-tag red">Entrepreneurship</div>
+        <h3>EduTech Venture — B-Plan Finalist</h3>
+        <p>Co-founded a conceptual EdTech platform targeting tier-2 city MBA aspirants. Built end-to-end business plan, 3-statement financial model, unit economics, and investor pitch deck for LPU's annual competition.</p>
+        <div class="proj-impact">Finalist — Top 10 of 120+ teams, LPU Business Conclave 2024</div>
+        <div class="proj-footer">
+          <div class="proj-tools"><span class="tool-chip">PowerPoint</span><span class="tool-chip">Excel</span><span class="tool-chip">Figma</span></div>
+          <span class="proj-arrow">→</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="section" id="certifications">
+  <div class="container">
+    <div class="sec-header rv">
+      <div>
+        <div class="sec-overline">05 — Credentials</div>
+        <h2 class="sec-title">Professional <em>Certifications</em></h2>
+        <div class="sec-rule"></div>
+      </div>
+      <div class="sec-num">05</div>
+    </div>
+    <div class="certs-list">
+      <div class="cert rv"><div class="cert-issuer">Google</div><h4>Digital Marketing Fundamentals</h4><p>Google Digital Garage · 2024</p><div class="cert-verified">Verified Certificate</div></div>
+      <div class="cert rv"><div class="cert-issuer">CFI</div><h4>Financial Analysis &amp; Valuation</h4><p>Corporate Finance Institute · 2024</p><div class="cert-verified">Verified Certificate</div></div>
+      <div class="cert rv"><div class="cert-issuer">Microsoft</div><h4>Data Analytics with Excel</h4><p>LinkedIn Learning · 2024</p><div class="cert-verified">Verified Certificate</div></div>
+      <div class="cert rv"><div class="cert-issuer">HubSpot</div><h4>SEO &amp; Inbound Content Strategy</h4><p>HubSpot Academy · 2023</p><div class="cert-verified">Verified Certificate</div></div>
+      <div class="cert rv"><div class="cert-issuer">NSE</div><h4>Investment Banking Essentials</h4><p>NSE Academy · India · 2024</p><div class="cert-verified">Verified Certificate</div></div>
+      <div class="cert rv"><div class="cert-issuer">Microsoft</div><h4>Power BI for Business Intelligence</h4><p>Coursera · 2024</p><div class="cert-verified">Verified Certificate</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERESTS -->
+<section class="section alt" id="interests">
+  <div class="container">
+    <div class="sec-header rv">
+      <div>
+        <div class="sec-overline" style="color:var(--gold)">06 — Pursuits</div>
+        <h2 class="sec-title">Professional <em>Interests</em></h2>
+        <div class="sec-rule" style="background:rgba(255,255,255,.08)"></div>
+      </div>
+      <div class="sec-num">06</div>
+    </div>
+    <div class="interests-row rv">
+      <div class="int-card"><span class="int-icon">♟</span><p>Business Strategy</p></div>
+      <div class="int-card"><span class="int-icon">🚀</span><p>Startups &amp; VC</p></div>
+      <div class="int-card"><span class="int-icon">🤝</span><p>Networking</p></div>
+      <div class="int-card"><span class="int-icon">🎤</span><p>Public Speaking</p></div>
+      <div class="int-card"><span class="int-icon">📈</span><p>Capital Markets</p></div>
+      <div class="int-card"><span class="int-icon">📚</span><p>Business Literature</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="section alt" id="achievements" style="padding-top:0">
+  <div class="container">
+    <div class="sec-header rv">
+      <div>
+        <div class="sec-overline" style="color:var(--gold)">07 — Recognition</div>
+        <h2 class="sec-title">Awards &amp; <em>Achievements</em></h2>
+        <div class="sec-rule" style="background:rgba(255,255,255,.08)"></div>
+      </div>
+      <div class="sec-num">07</div>
+    </div>
+    <div class="ach-metrics rv">
+      <div class="ach-metric"><div class="num" data-count="10">0</div><div class="lbl">Competitions Entered</div></div>
+      <div class="ach-metric"><div class="num" data-count="3">0</div><div class="lbl">Awards &amp; Honours</div></div>
+      <div class="ach-metric"><div class="num" data-count="300">0</div><div class="lbl">Research Respondents</div></div>
+      <div class="ach-metric"><div class="num" data-count="120">0+</div><div class="lbl">Teams Outranked</div></div>
+    </div>
+    <div class="ach-awards rv">
+      <div class="award"><div class="award-rank">I</div><div><h4>B-Plan Competition — Finalist</h4><p>Top 10 of 120+ entries · LPU Annual Business Conclave 2024. EduTech pitch praised for financial rigour and market sizing methodology.</p></div></div>
+      <div class="award"><div class="award-rank">II</div><div><h4>Best Presenter — Marketing Case Study</h4><p>MBA Department Excellence Awards · Recognised for structured problem framing and data-backed strategic recommendations.</p></div></div>
+      <div class="award"><div class="award-rank">III</div><div><h4>Dean's List — Academic Excellence</h4><p>Consistent top 5% of MBA cohort across both semesters with a CGPA of 8.7 / 10.0</p></div></div>
+      <div class="award"><div class="award-rank">IV</div><div><h4>Finance Head — MBA Student Council</h4><p>Managed ₹3L+ event budgets, vendor negotiations, and financial reporting for all council activities throughout 2024.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="sec-header rv">
+      <div>
+        <div class="sec-overline">08 — Connect</div>
+        <h2 class="sec-title">Let's Build <em>Something</em></h2>
+        <div class="sec-rule"></div>
+      </div>
+      <div class="sec-num">08</div>
+    </div>
+    <div class="contact-grid">
+      <div class="rv-l">
+        <h3 class="contact-headline">Open to <em>Opportunities</em> in Strategy, Finance &amp; Marketing</h3>
+        <p class="contact-body">Whether you're a recruiter, startup founder, or industry professional — I'd be glad to connect. I'm actively exploring full-time roles and internship opportunities where I can deliver measurable business impact.</p>
+        <div class="contact-items">
+          <a href="mailto:aarav.banerjee@lpu.in" class="contact-item">
+            <div><div class="ci-label">Email</div><div class="ci-val">aarav.banerjee@lpu.in</div></div>
+            <span class="ci-arrow">→</span>
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="contact-item">
+            <div><div class="ci-label">LinkedIn</div><div class="ci-val">linkedin.com/in/aaravbanerjee</div></div>
+            <span class="ci-arrow">→</span>
+          </a>
+          <a href="tel:+919876543210" class="contact-item">
+            <div><div class="ci-label">Phone</div><div class="ci-val">+91 98765 43210</div></div>
+            <span class="ci-arrow">→</span>
+          </a>
+          <div class="contact-item" style="cursor:default">
+            <div><div class="ci-label">Location</div><div class="ci-val">Punjab, India · Open to Relocation</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="rv-r">
+        <div class="form-wrap">
+          <div class="form-row">
+            <div class="fg"><label>First Name</label><input type="text" placeholder="John"></div>
+            <div class="fg"><label>Last Name</label><input type="text" placeholder="Doe"></div>
+          </div>
+          <div class="fg"><label>Company / Organisation</label><input type="text" placeholder="Acme Corp"></div>
+          <div class="fg"><label>Email Address</label><input type="email" placeholder="john@acme.com"></div>
+          <div class="fg">
+            <label>Nature of Inquiry</label>
+            <select style="padding:.75rem 1rem;border:1px solid var(--rule);font-family:'DM Sans',sans-serif;font-size:.88rem;color:var(--ink);background:var(--paper);outline:none;appearance:none;">
+              <option>Full-time Opportunity</option>
+              <option>Internship / Summer</option>
+              <option>Collaboration / Research</option>
+              <option>Mentorship</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="fg"><label>Message</label><textarea rows="4" placeholder="Tell me about the role or opportunity..."></textarea></div>
+          <button class="form-submit" onclick="this.textContent='Message Sent — Thank You ✓';this.style.background='#1a6b3c'">Send Message →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">Aarav Banerjee</div>
+    <div class="footer-sub">MBA · Marketing &amp; Finance · LPU Punjab 2025</div>
+  </div>
+  <div class="social-links">
+    <a href="#" class="social-link">in</a>
+    <a href="#" class="social-link">𝕏</a>
+    <a href="#" class="social-link">✉</a>
+  </div>
+  <div class="footer-copy">
+    <div style="color:var(--gold);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.4rem">Turning Data into Strategy</div>
+    <div>© 2025 Aarav Banerjee. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+// LOADER
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    const l=document.getElementById('loader');
+    l.style.opacity='0';
+    setTimeout(()=>l.style.display='none',700);
+  },2400);
+});
+
+// CURSOR
+const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
+let mx=0,my=0,cx=0,cy=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  cur.style.left=mx-5+'px';cur.style.top=my-5+'px';
+});
+setInterval(()=>{
+  cx+=(mx-cx)*.14;cy+=(my-cy)*.14;
+  cur2.style.left=cx-16+'px';cur2.style.top=cy-16+'px';
+},16);
+document.querySelectorAll('a,button,.proj,.cert,.award,.int-card,.tool-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.transform='scale(2.5)';cur2.style.transform='scale(.5)';cur2.style.opacity='.8';});
+  el.addEventListener('mouseleave',()=>{cur.style.transform='scale(1)';cur2.style.transform='scale(1)';cur2.style.opacity='.5';});
+});
+
+// SPARKLINE
+const sl=document.getElementById('sparkline');
+const vals=[55,62,58,70,75,68,80,85,82,90,88,92];
+vals.forEach((v,i)=>{
+  const b=document.createElement('div');
+  b.className='spark-bar'+(i===vals.length-1?' hi':'');
+  b.style.height=v+'%';
+  sl.appendChild(b);
+});
+
+// REVEAL
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('show');
+      e.target.querySelectorAll('.bar-fill').forEach(b=>{
+        b.style.transform=`scaleX(${b.dataset.w})`;
+      });
+      e.target.querySelectorAll('[data-count]').forEach(el=>{
+        const t=parseInt(el.dataset.count),suf=el.dataset.suffix||'';
+        let c=0;const step=t/50;
+        const iv=setInterval(()=>{c=Math.min(c+step,t);el.textContent=Math.round(c)+suf;if(c>=t)clearInterval(iv);},20);
+      });
+    }
+  });
+},{threshold:.12});
+document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(el=>obs.observe(el));
+
+// MOB NAV
+function closeMob(){document.getElementById('mobnav').classList.remove('open');}
+</script>
+</body>
+</html>
